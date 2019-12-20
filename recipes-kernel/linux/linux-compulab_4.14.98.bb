@@ -11,7 +11,7 @@ DEFAULT_PREFERENCE = "1"
 
 include linux-compulab-4.14.98/linux-compulab_cl-som-imx7.inc
 
-addtask copy_defconfig after do_unpack before do_preconfigure
+addtask copy_defconfig after do_patch before do_preconfigure
 do_copy_defconfig () {
     install -d ${B}
     mkdir -p ${B}
