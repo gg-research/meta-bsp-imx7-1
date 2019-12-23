@@ -1,7 +1,6 @@
 # Quick Start Guide
 
-## Supported CompuLab Machines
-
+# Supported CompuLab Machines
 * `cl-som-imx7`
 
 # Prepare NXP BSP
@@ -21,13 +20,15 @@ COMPULAB_MACHINE=cl-som-imx7
 # Build Images
 Refer to the http://source.codeaurora.org/external/imx/meta-fsl-bsp-release/tree/imx/README?h=sumo-4.14.98-2.0.0_ga[`NXP Readme`] for details about how to select a correct `backend` & `distro`.
 
-## imx7
-This example shows how to build NXP supported images for the `${COMPULAB_MACHINE}`
-
 * Minimal core image
 [source,console]
 MACHINE=${COMPULAB_MACHINE} DISTRO=fsl-imx-fb source sources/meta-bsp-imx7/tools/setup-env -b build-fb-imx7
 bitbake -k core-image-minimal
+
+* Full command line core image
+[source,console]
+MACHINE=${COMPULAB_MACHINE} DISTRO=fsl-imx-fb source sources/meta-bsp-imx7/tools/setup-env -b build-fb-imx7
+bitbake -k core-image-full-cmdline
 
 * Weston GUI image
 [source,console]
@@ -44,13 +45,13 @@ bitbake -k fsl-image-qt5-validation-imx
 MACHINE=${COMPULAB_MACHINE} DISTRO=fsl-imx-x11 source sources/meta-bsp-imx7/tools/setup-env -b build-x11-imx7
 bitbake -k compulab-image-xfce
 
-## Device Trees and available features
-### sbc-imx7
+# Device Trees and available features
+## sbc-imx7
 * imx7d-sbc-imx7.dtb -- U-Boot default
 * imx7d-sbc-imx7-lvds.dtb -- LVDS on
 * imx7d-sbc-imx7-m4.dtb -- M4 tests ready
 
-### sbc-iot-imx7
+## sbc-iot-imx7
 * imx7d-sbc-iot-imx7.dtb
 * imx7d-sbc-iot-imx7-can.dtb -- CAN on
 * imx7d-sbc-iot-imx7-rs485-hdx.dtb - rs485 on
