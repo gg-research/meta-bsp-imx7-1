@@ -1,7 +1,7 @@
-From 19f3286f6912585438a9f45b669a7c1f82812aa9 Mon Sep 17 00:00:00 2001
+From ca4105f621bccb393fdf1af7f13f826b12e4ecd5 Mon Sep 17 00:00:00 2001
 From: Ilya Ledvich <ilya@compulab.co.il>
 Date: Thu, 28 Dec 2017 09:48:38 +0200
-Subject: [PATCH 29/37] ARM: dts: imx7d: sbc-iot-imx7: add support for CAN bus
+Subject: [PATCH 29/40] ARM: dts: imx7d: sbc-iot-imx7: add support for CAN bus
 
 Enable CAN bus support over FLEXCAN2 interface.
 

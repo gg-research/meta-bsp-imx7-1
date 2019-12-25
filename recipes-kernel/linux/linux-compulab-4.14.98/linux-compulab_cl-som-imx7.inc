@@ -36,6 +36,9 @@ SRC_URI_append_cl-som-imx7 += "\
     file://0035-video-mipi-panel-ti-sn65dsi83-add-MIPI-LVDS-bridge-d.patch \
     file://0036-ARM-imx7d-cl-som-imx7-dts-add-LVDS-support.patch \
     file://0037-ARM-configs-add-defconfig-for-compulab-imx7-based-de.patch \
+    file://0038-ARM-dts-imx7d-sbc-imx7-enable-SB-SOM-peripheral.patch \
+    file://0039-rtc-em3027-correct-month-value.patch \
+    file://0040-ARM-imx7d-release-kernel-v4.14.98-cl-som-imx7-6.0.patch \
     file://compulab_imx7_defconfig \
     file://defconfig \
 "

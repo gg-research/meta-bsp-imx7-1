@@ -1,7 +1,7 @@
-From f9c7d5ce7296e64d2347503f3a340a69bf69fc83 Mon Sep 17 00:00:00 2001
+From a49460acd77db603aa4f4b0ea184b4ec96a7f915 Mon Sep 17 00:00:00 2001
 From: Ilya Ledvich <ilya@compulab.co.il>
 Date: Fri, 5 Feb 2016 11:04:53 +0200
-Subject: [PATCH 23/37] ARM: dts: imx7d: sbc-imx7: add LCD support
+Subject: [PATCH 23/40] ARM: dts: imx7d: sbc-imx7: add LCD support
 
 Add support for Startek KD050C LCD display over lcdif interface.
 

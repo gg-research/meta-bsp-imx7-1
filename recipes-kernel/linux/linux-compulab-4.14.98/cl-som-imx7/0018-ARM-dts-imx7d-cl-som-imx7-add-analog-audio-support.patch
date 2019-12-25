@@ -1,7 +1,7 @@
-From 13d4fd69518d0cdcdd71ff6eecf5221a701ee707 Mon Sep 17 00:00:00 2001
+From e70d1cc8eae6059683e43f0f8d79a32d236ebf81 Mon Sep 17 00:00:00 2001
 From: Ilya Ledvich <ilya@compulab.co.il>
 Date: Thu, 9 Jun 2016 15:35:07 +0300
-Subject: [PATCH 18/37] ARM: dts: imx7d: cl-som-imx7: add analog audio support
+Subject: [PATCH 18/40] ARM: dts: imx7d: cl-som-imx7: add analog audio support
 
 Add analog audio support by means of the simple-audio-card.
 This instance provides a simple glue interface between cpu:sai and codec:wm8731.
@@ -11,14 +11,14 @@ codec from GPIO1_IO01 pin muxed in SAI1_MCLK mode.
 
 Signed-off-by: Ilya Ledvich <ilya@compulab.co.il>
 ---
- arch/arm/boot/dts/imx7d-cl-som-imx7.dts | 75 +++++++++++++++++++++++++
- 1 file changed, 75 insertions(+)
+ arch/arm/boot/dts/imx7d-cl-som-imx7.dts | 76 +++++++++++++++++++++++++
+ 1 file changed, 76 insertions(+)
 
 diff --git a/arch/arm/boot/dts/imx7d-cl-som-imx7.dts b/arch/arm/boot/dts/imx7d-cl-som-imx7.dts
-index a0a6f394983f..6fe355ec3939 100644
+index a0a6f394983f..10f35617ba45 100644
 --- a/arch/arm/boot/dts/imx7d-cl-som-imx7.dts
 +++ b/arch/arm/boot/dts/imx7d-cl-som-imx7.dts
-@@ -83,6 +83,46 @@
+@@ -83,6 +83,47 @@
  		regulator-name = "bt_en_fixed";
  		us-folder-num = <0>;
  	};
@@ -50,6 +50,7 @@ index a0a6f394983f..6fe355ec3939 100644
 +		sound_master: simple-audio-card,cpu {
 +			sound-dai = <&sai1 0>;
 +			system-clock-direction-out;
++			system-clock-frequency = <0>;
 +		};
 +
 +		simple-audio-card,codec {
@@ -65,7 +66,7 @@ index a0a6f394983f..6fe355ec3939 100644
  };
  
  &cpu0 {
-@@ -315,6 +355,15 @@
+@@ -315,6 +356,15 @@
  		};
  	};
  
@@ -81,7 +82,7 @@ index a0a6f394983f..6fe355ec3939 100644
  	pca9555: pca9555@20 {
  		compatible = "nxp,pca9555";
  		gpio-controller;
-@@ -350,6 +399,17 @@
+@@ -350,6 +400,17 @@
  	};
  };
  
@@ -99,7 +100,7 @@ index a0a6f394983f..6fe355ec3939 100644
  &uart1 {
  	pinctrl-names = "default";
  	pinctrl-0 = <&pinctrl_uart1>;
-@@ -506,6 +566,15 @@
+@@ -506,6 +567,15 @@
  		>;
  	};
  
@@ -115,7 +116,7 @@ index a0a6f394983f..6fe355ec3939 100644
  	pinctrl_tsc2046: tsc2046grp {
  		fsl,pins = <
  			MX7D_PAD_GPIO1_IO14__GPIO1_IO14			0x34 /* PENDOWN */
-@@ -573,6 +642,12 @@
+@@ -573,6 +643,12 @@
  		>;
  	};
  

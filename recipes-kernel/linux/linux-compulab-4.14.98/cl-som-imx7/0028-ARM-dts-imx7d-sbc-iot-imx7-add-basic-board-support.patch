@@ -1,7 +1,7 @@
-From 1c0c576b77b4e599204d6a5907977ae7f23388a8 Mon Sep 17 00:00:00 2001
+From 4bdf38c31726c2c90b8a6d0061d2c43318b1377a Mon Sep 17 00:00:00 2001
 From: Ilya Ledvich <ilya@compulab.co.il>
 Date: Thu, 8 Feb 2018 11:17:48 +0200
-Subject: [PATCH 28/37] ARM: dts: imx7d: sbc-iot-imx7: add basic board support
+Subject: [PATCH 28/40] ARM: dts: imx7d: sbc-iot-imx7: add basic board support
 
 The SB-IOT-iMX7 base board together with CL-SOM-iMX7 SoM form
 SBC-IOT-iMX7 single board computer.
@@ -23,8 +23,8 @@ storage device.
 Signed-off-by: Ilya Ledvich <ilya@compulab.co.il>
 ---
  arch/arm/boot/dts/Makefile               |   1 +
- arch/arm/boot/dts/imx7d-sbc-iot-imx7.dts | 256 +++++++++++++++++++++++
- 2 files changed, 257 insertions(+)
+ arch/arm/boot/dts/imx7d-sbc-iot-imx7.dts | 262 +++++++++++++++++++++++
+ 2 files changed, 263 insertions(+)
  create mode 100644 arch/arm/boot/dts/imx7d-sbc-iot-imx7.dts
 
 diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
@@ -41,10 +41,10 @@ index 76780229f9d6..5474c3b365b7 100644
  	imx7d-sdb-gpmi-weim.dtb \
 diff --git a/arch/arm/boot/dts/imx7d-sbc-iot-imx7.dts b/arch/arm/boot/dts/imx7d-sbc-iot-imx7.dts
 new file mode 100644
-index 000000000000..cbbbce82b96a
+index 000000000000..a69748bf59ca
 --- /dev/null
 +++ b/arch/arm/boot/dts/imx7d-sbc-iot-imx7.dts
-@@ -0,0 +1,256 @@
+@@ -0,0 +1,262 @@
 +/*
 + * Support for CompuLab SBC-IOT-iMX7 Single Board Computer
 + *
@@ -75,6 +75,12 @@ index 000000000000..cbbbce82b96a
 +	pinctrl-0 = <&pinctrl_ecspi3 &pinctrl_ecspi3_cs>;
 +	cs-gpios = <&gpio4 11 0>;
 +	status = "okay";
++
++	spidev0: spi@0 {
++		reg = <0>;
++		compatible = "rohm,dh2228fv";
++		spi-max-frequency = <10000000>;
++	};
 +};
 +
 +&i2c3 {
