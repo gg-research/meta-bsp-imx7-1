@@ -19,6 +19,7 @@ IMAGE_FEATURES += " \
     hwcodecs \
     x11-base \
     dev-pkgs \
+    package-management \
 "
 
 CORE_IMAGE_EXTRA_INSTALL += " \
@@ -31,6 +32,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 # Expand the CORE_IMAGE_EXTRA_INSTALL
 # with the custom package list
 CORE_IMAGE_EXTRA_INSTALL += " \
+ apt \
 "
 
 # Uncoment lines: 38, 39 it for 4G image
@@ -40,5 +42,5 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 
 # Uncoment lines: 43, 44 it for 8G image
 # $(( $(( 8192 - 12 )) << 10 ))
-# IMAGE_ROOTFS_SIZE = "8376320"
-# IMAGE_OVERHEAD_FACTOR = "1.0"
+IMAGE_ROOTFS_SIZE = "8376320"
+IMAGE_OVERHEAD_FACTOR = "1.0"
