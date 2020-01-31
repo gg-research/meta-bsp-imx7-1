@@ -8,6 +8,13 @@ demos and lots of applications. This creates a very large image, not \
 suitable for production."
 LICENSE = "MIT"
 
+#
+# Derived from fsl-image-validation-imx.bb
+#
+# 2 sections at the end added
+##
+####################################################
+
 inherit core-image
 
 ### WARNING: This image is NOT suitable for production use and is intended
